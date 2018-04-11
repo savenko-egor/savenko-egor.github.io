@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../stylesheets/style.css?v=aa5c3cf3eb3cb76ac712fdf2b5cfe0322f2d9ef8" media="screen" type="text/css">
+        <link rel="stylesheet" href="../stylesheets/print.css" media="print" type="text/css">
+
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Begin Jekyll SEO tag v2.3.0 -->
+        <title>Увеличение памяти на ESP8266 ESP-01</title>
+        <meta property="og:title" content="Architect theme" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="description" content="Architect is a theme for GitHub Pages." />
+        <meta property="og:description" content="Architect is a theme for GitHub Pages." />
+        <link rel="canonical" href="https://pages-themes.github.io/architect/" />
+        <meta property="og:url" content="https://pages-themes.github.io/architect/" />
+        <meta property="og:site_name" content="Architect theme" />
+        <script type="application/ld+json">
+        {"name":"Architect theme","description":"Architect is a theme for GitHub Pages.","author":null,"@type":"WebSite","url":"https://pages-themes.github.io/architect/","image":null,"publisher":null,"headline":"Architect theme","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+        <!-- End Jekyll SEO tag -->
+    </head>
+    <body>
+        <header>
+        <div class="inner">
+            <a href="https://savenko.github.io/">
+                <h1>Savenko Egor</h1>
+            </a>
+            <h2>Smart Home, IT, etc.</h2>
+            <a href="https://github.com/savenko-egor/savenko.github.io" class="button"><small>View project on</small> GitHub</a>
+        </div>
+        </header>
+
+        <div id="content-wrapper">
+            <div class="inner clearfix">
+                <section id="main-content">
+                    <h1 id="header-1"><a href="#header-1"></a>Увеличение памяти на ESP8266 ESP-01</h1>
+
+                    <p>Сегодня речь будет идти о том, как увеличить количество памяти на модуле ESP8266 ESP-01, путём замены чипа на новый.</p>
+                    <p>На IRC канале проекта <a href="https://wifi-iot.com/p/main/">wifi-iot.com</a>, Макс - разработчик прошивки для ESP модулей, предложил идею что есть возможность заменить стандартный чип на более емкий. Для замены был выбран новый, от производителя: «Winbond Electronics Corporation (WINBOND)» чип: «W25Q32FVSSIG» имеющий у себя на борту 4МБ памяти. Мной был куплен примерно за 1$. На всякий случай брал два, немного сомневаясь в том что смогу без последствий перепаять не повредив оный. Да и подстраховка никогда не лишняя :-)</p>
+                    <p>Сразу хочу попросить прощение за качество фото. На телефон к сожалению, не получилось сделать более-менее нормальных фото. Нужно будет попрактиковать со светом и фоном.</p>
+                    <p><img src="../images/notes/esp8266_increase_memory/IMG_20150609_125717.jpg" alt="" /></p>
+                    <p>Вооружившись паяльником и плоскогубцами(об этом ниже) я начал экзекуцию над несчастным модулем :-)</p>
+                    <p><img src="../images/notes/esp8266_increase_memory/IMG_20150609_130021.jpg" alt="" /></p>
+                    <p>После пары минут дефолтный чип был у меня в руках.</p>
+                    <p><img src="../images/notes/esp8266_increase_memory/IMG_20150609_130035.jpg" alt="" /></p>
+                    <p>При покупке в магазине, посмотрев на чип я не заметил отличий от дефолтного. И уже придя домой и сравнив их, понял что новый чуть больше.</p>
+                    <p><img src="../images/notes/esp8266_increase_memory/IMG_20150609_134556.jpg" alt="" /></p>
+                    <p>Потыкав его и так и сяк, я понял что дела не будет. Так как у меня по жизни «или сломаю или сделаю» :-) , я взял в руки плоскогубцы и просто подогнул ножки на новом чипе, для того что бы они чётко попали на контактные площадки на плате модуля. После 10-ти минутных манипуляций с паяльником, всё никак не мог установить его как нужно, новый чип всё-таки встал на положенное ему место. Проверив через лупу пропайку, я обрадовался от того что наконец-то победил эту заразу :-)</p>
+                    <p><img src="../images/notes/esp8266_increase_memory/IMG_20150609_134331.jpg" alt="" />
+                    <img src="../images/notes/esp8266_increase_memory/IMG_20150609_134359.jpg" alt="" /></p>
+                    <p>Чип был перепаян. Я сразу же прошил его прошивкой от Макса - <a href="https://wifi-iot.com/p/main/">wifi-iot.com</a>, и протестировал его работу. Абсолютно никаких проблем не было обнаружено. И благодаря этой манипуляции с чипами, я смог установить больше компонентов в конструкторе прошивки.</p>
+                    <p>P.S. Под конец могу сказать что был очень доволен полученным результатом.</p>
+                    <p>По ходу статьи, я не раз упоминал про какого-то Макса и какую-то его прошивку. На сайт <a href="https://wifi-iot.com/p/main/">wifi-iot.com</a> я натолкнулся совсем случайно, и очень рад что нашёл его. Благодаря нему мой проект «Умного дома» обрел новые возможности. Так же хочу сказать спасибо ребятам с IRC канала, за ответы на глупые вопросы и рекомендации в той или иной ситуации! В случае если Вы хотите построить свой «Умный дом» или же какие либо IoT на базе подобных модулей, то прошивка от Макса будет самым отличным подспорьем для этого. Рекомендую!</p>
+                    <p>P.P.S. Немного фото на самый конец. Сравнение модулей с дефолтным чипом, и с новым.</p>
+                    <p><img src="../images/notes/esp8266_increase_memory/IMG_20150609_134647.jpg" alt="" /></p>
+                    <p><img src="../images/notes/esp8266_increase_memory/IMG_20150609_134704.jpg" alt="" /></p>
+                    <p><img src="../images/notes/esp8266_increase_memory/IMG_20150609_134752.jpg" alt="" /></p>
+                    <center><p><a href="/">Вернутся на главную</a></p></center>
+                </section>
+
+                <aside id="sidebar">
+                    <a href="https://github.com/pages-themes/architect/zipball/master" class="button">
+                    <small>Download</small>
+                    .zip file
+                    </a>
+                    <a href="https://github.com/pages-themes/architect/tarball/master" class="button">
+                    <small>Download</small>
+                    .tar.gz file
+                    </a>
+                    <p class="repo-owner"><a href="https://github.com/pages-themes/architect">architect</a> is maintained by <a href="https://github.com/pages-themes">pages-themes</a>.</p>
+                <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</p>
+                </aside>
+            </div>
+        </div>    
+  </body>
+</html>
+ 
